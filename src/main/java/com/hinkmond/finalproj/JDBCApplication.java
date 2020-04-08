@@ -1,3 +1,5 @@
+//package com.hinkmond.finalproj;
+
 package com.hinkmond.finalproj;
 
 import org.springframework.boot.SpringApplication;

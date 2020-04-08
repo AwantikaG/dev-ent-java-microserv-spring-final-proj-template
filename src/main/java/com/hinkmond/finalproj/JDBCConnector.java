@@ -6,13 +6,13 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class JDBCConnector {
-    private static JdbcTemplate jdbcTemplate;
+    public static JdbcTemplate jdbcTemplate;
 
     public static JdbcTemplate getJdbcTemplate() {
         return jdbcTemplate;
     }
 
-    void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
+    public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
         JDBCConnector.jdbcTemplate = jdbcTemplate;
         String queryTmp = "SHOW TABLES;";
         List<String> sqlResult = JDBCConnector.jdbcTemplate.queryForList(queryTmp, String.class);

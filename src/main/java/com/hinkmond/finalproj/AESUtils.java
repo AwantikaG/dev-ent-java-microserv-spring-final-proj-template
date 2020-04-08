@@ -14,7 +14,7 @@ import java.security.GeneralSecurityException;
 import java.util.Scanner;
 
 @Component("aesUtils")
-class AESUtils {
+public class AESUtils {
     private final static String AES = "AES";
     private final static String END_OF_FILE = "\\Z";
 
@@ -48,7 +48,7 @@ class AESUtils {
     /**
      * Decrypt a value.
      */
-    String decrypt(String message, String keyFilePath) {
+    public String decrypt(String message, String keyFilePath) {
         byte[] decrypted = "Emtpy".getBytes();
         try {
             File keyFile = new File(keyFilePath);
@@ -100,7 +100,7 @@ class AESUtils {
 
     public static void main(String... args) {
         // Add your password in between the quotes, run this main, copy the encrypted password, then delete.
-        String origStr = args.length == 0 ? "<Add password here, then remove when done>" : args[1];
+        String origStr = args.length == 0 ? "ucscSV2020W!" : args[1];
         if (!(origStr.equals(""))) {
             AESUtils aesUtils = new AESUtils();
             System.err.println(aesUtils.encrypt(origStr,"./keyFile.key"));
